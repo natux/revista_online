@@ -1,0 +1,58 @@
+///////////////////////////////////////////////////////////
+// Agrege otro para max-width debido a que era necesario //
+///////////////////////////////////////////////////////////
+$breakpoints-mins:
+(
+    'xsmall': (min-width: 384px),
+    'small': (min-width: 576px),
+    'medium': (min-width: 768px),
+    'large': (min-width: 992px),
+    'huge': (min-width: 1200px),
+);
+
+$breakpoints-maxs:
+(
+    'xsmall': (max-width: 383px),
+    'small': (max-width: 575px),
+    'medium': (max-width: 767px),
+    'large': (max-width: 991px),
+    'huge': (max-width: 1199px),
+);
+
+@mixin mix_min_width($breakpoint)
+{
+    $raw-query: map-get($breakpoints-mins, $breakpoint);
+
+    @if $raw-query
+    {
+        $query: if(type-of($raw-query) == 'string',  unquote($raw-query), inspect($raw-query));
+
+        @media #{$query}
+        {
+            @content;
+        }
+    }
+    @else
+    {
+        @error 'No value found for `#{$breakpoint}`. ' + 'Please make sure it is defined in `$breakpoints-mins` map.';
+    }
+}
+
+@mixin mix_max_width($breakpoint)
+{
+    $raw-query: map-get($breakpoints-maxs, $breakpoint);
+
+    @if $raw-query
+    {
+        $query: if(type-of($raw-query) == 'string',  unquote($raw-query), inspect($raw-query));
+
+        @media #{$query}
+        {
+            @content;
+        }
+    }
+    @else
+    {
+        @error 'No value found for `#{$breakpoint}`. ' + 'Please make sure it is defined in `$breakpoints-maxs` map.';
+    }
+}

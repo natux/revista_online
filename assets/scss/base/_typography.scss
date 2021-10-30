@@ -1,0 +1,14 @@
+///////////////////////////////////
+// Menos lineas de codigo, mejor //
+///////////////////////////////////
+@mixin mix_font_manager($param-color, $param-fontFamily, $param-fontWeight, $param-fontSize, $param-padding-top, $param-padding-bottom)
+{
+    color: $param-color;
+
+    font-family: $param-fontFamily;
+    font-weight: $param-fontWeight;
+    font-size: $param-fontSize;
+
+    padding-top: $param-padding-bottom;
+    padding-bottom: $param-padding-top;
+}
