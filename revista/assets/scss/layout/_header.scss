@@ -1,0 +1,60 @@
+///////////////////////////////////////
+// Header con su barra de navegacion //
+///////////////////////////////////////
+.navbarMenu
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    @include mix_max_width('small')
+    {
+        justify-content: center;
+    }
+
+    background-color: cadetblue;
+
+    padding: 16px;
+    height: 64px;
+
+    h1
+    {
+        @include mix_font_manager(white, $font-robotoMono, bold, $font-xLarge, 0px, 0px);
+        text-shadow: 2px 2px 2px darkslategray;
+    }
+    &__nav
+    {
+        a
+        {
+            @include mix_max_width('small')
+            {
+                display: none;
+            }
+
+            @include mix_font_manager(white, $font-robotoMono, normal, $font-medium, 0px, 0px);
+
+            margin-right: 24px;
+            text-decoration: none;
+
+            &:hover
+            {
+                color: darkslategray;
+            }
+        }
+        input
+        {
+            @include mix_max_width('medium')
+            {
+                display: none;
+            }
+
+            color: gray;
+            border-radius: 8px;
+
+            width: 256px;
+            height: 40px;
+            padding-left: 8px;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+// Importacion de fuentes
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap');
+
+// Integracion de parciales
+@import 'abstract/reset';
+@import 'abstract/variables';
+//@import "vendors/vendors";
+@import 'base/screen_manager';
+@import 'base/typography';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/mobile_search';
+@import 'layout/news_container';
+//@import 'components/';
+//@import 'pages/';
+@import 'themes/default_theme';
